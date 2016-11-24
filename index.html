@@ -135,8 +135,6 @@
 			MsgBox(ResultText);
 			return;
 		}	//if (ResultCode=='00000'){	//作業成功
-		$('#frmUserLogin #btnStart').hide();
-		$('#frmUserLogin #btnStop').show();
 		doMQTTConnect();
 	}
 
@@ -166,6 +164,9 @@
 		myInterval = setInterval(function () {
 			publish_message();
 		},10000);
+
+		$('#frmUserLogin #btnStart').hide();
+		$('#frmUserLogin #btnStop').show();
 
 	};
 	function onConnectionLost(responseObject) {
