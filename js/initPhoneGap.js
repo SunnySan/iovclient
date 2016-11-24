@@ -23,8 +23,6 @@ function onDeviceReady() {
 			'我知道了'                  // buttonName
 		);
 	}
-	initGAPlugin();
-	GATrackPageView($.mobile.activePage.attr('id'));
 	document.addEventListener("backbutton", processBackButton, false);
 }
 
@@ -36,13 +34,6 @@ function processBackButton(e){
 			quitMeConfirm,              // callback to invoke with index of button pressed
 			'離開確認',            // title
 			'結束程式,繼續使用'          // buttonLabels
-		);
-	}else if($.mobile.activePage.attr('id')=='userLogin'){
-		navigator.notification.confirm(
-			'此功能僅適威寶用戶門號，若您不再使用請按<離開>，或繼續使用此部分功能',  // message
-			function(button){if(button==1) quitMe(); else showPage("#home");},              // callback to invoke with index of button pressed
-			'取消登入通知',            // title
-			'離開,繼續使用'          // buttonLabels
 		);
 	}else {
 		//history.go(-1);
