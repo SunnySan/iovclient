@@ -12,6 +12,7 @@ function quitMeConfirm(button){
 	if(button==1) quitMe();
 }
 function onDeviceReady() {
+	alert("ready");
 	//alert('navigator.connection.type='+navigator.connection.type);
 	//alert('navigator.network.connection.type='+navigator.network.connection.type);
 	//cordova.exec(null, null, "SplashScreen", "hide", []);	//關閉SplashScreen
@@ -27,7 +28,6 @@ function onDeviceReady() {
 }
 
 function processBackButton(e){
-	alert("ecit");
 	e.preventDefault();
 	if($.mobile.activePage.attr('id')=='home'){
 		navigator.notification.confirm(
