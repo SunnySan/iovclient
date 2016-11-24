@@ -476,7 +476,9 @@ function getDataFromServer(sProgram, sData, sResponseType, SuccessCallback, bBlo
 		timeout: 60000, //設置timeout時間，以千分之一秒為單位，1000 = 1秒
 		error: function (xhr, status, error){	//錯誤提示
 			//var err = eval("(" + xhr.responseText + ")");
-			alert(JSON.parse(xhr.responseText));
+			alert(status);
+			alert(error);
+			alert(xhr.responseText);
   			MsgBox('System error, please try again later.');
 		},
 		success: function (data){ //ajax請求成功後do something with response data
