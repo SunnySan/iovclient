@@ -475,8 +475,8 @@ function getDataFromServer(sProgram, sData, sResponseType, SuccessCallback, bBlo
 		dataType: sResponseType, //指定數據類型，注意server要有一行：response.setContentType("text/xml;charset=utf-8");
 		timeout: 60000, //設置timeout時間，以千分之一秒為單位，1000 = 1秒
 		error: function (xhr, status, error){	//錯誤提示
-			var err = eval("(" + xhr.responseText + ")");
-			alert(err.Message);
+			//var err = eval("(" + xhr.responseText + ")");
+			alert(JSON.parse(xhr.responseText));
   			MsgBox('System error, please try again later.');
 		},
 		success: function (data){ //ajax請求成功後do something with response data
