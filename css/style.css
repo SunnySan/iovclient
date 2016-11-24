@@ -34,7 +34,7 @@ img {
 .vibo-header {
 	width: 100%;
 	background-image: url(../images/header_logo.png);
-	background-color: #E70012;
+	background-color: #FFFFFF;
 	background-repeat: no-repeat;
 	background-position: left top;
 	padding: 0;
@@ -87,8 +87,8 @@ img {
 /***********頁面footer的版權宣告***********/
 .footer-copyright {
 	height: 21px;
-	color:#DDDDDD;
-	background-color:#E70012;
+	color:#888888;
+	background-color:#FFFFFF;
 	font-size:9pt;
 	font-style:normal;
 	font-weight:normal;

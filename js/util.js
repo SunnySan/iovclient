@@ -2,7 +2,7 @@
 
 /**********全域變數**********/
 var GAAccountId = "UA-44606446-3"							//Google Analytics 的帳號
-var sServerBaseURL = "https://vshop.vibo.com.tw/myviboadmin/";	//Server端接收 request 的 URL 路徑
+var sServerBaseURL = "http://cms.gslssd.com/iovserver/";	//Server端接收 request 的 URL 路徑
 
 /**********Google Analytics的追蹤功能**********/
 var gaPlugin;
