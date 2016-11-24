@@ -460,10 +460,12 @@ function getDataFromServer(sProgram, sData, sResponseType, SuccessCallback, bBlo
 	bBlockUI		是否顯示BlockUI，若未輸入此參數則預設為顯示BlockUI
 	*****************************************************************/
 	if (beEmpty(bBlockUI)) bBlockUI = true;
-	if (beEmpty(sData)) sData = "ResponseType=" + sResponseType; else sData += "&ResponseType=" + sResponseType;
+	//if (beEmpty(sData)) sData = "ResponseType=" + sResponseType; else sData += "&ResponseType=" + sResponseType;
+	/*
 		alert(sServerBaseURL + sProgram);
 		alert(sData);
 		alert(sResponseType);
+	*/
 	$.ajax({
 		url: sServerBaseURL + sProgram,
 		type: 'POST', //根據實際情況，可以是'POST'或者'GET'
@@ -472,8 +474,10 @@ function getDataFromServer(sProgram, sData, sResponseType, SuccessCallback, bBlo
 		data: sData,
 		dataType: sResponseType, //指定數據類型，注意server要有一行：response.setContentType("text/xml;charset=utf-8");
 		timeout: 60000, //設置timeout時間，以千分之一秒為單位，1000 = 1秒
-		error: function (){	//錯誤提示
-			MsgBox('System error, please try again later.');
+		error: function (xhr, status, error){	//錯誤提示
+			var err = eval("(" + xhr.responseText + ")");
+			alert(err.Message);
+  			MsgBox('System error, please try again later.');
 		},
 		success: function (data){ //ajax請求成功後do something with response data
 			SuccessCallback(data);
