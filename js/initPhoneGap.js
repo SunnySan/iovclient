@@ -24,7 +24,7 @@ function onDeviceReady() {
 		);
 	}
 	document.addEventListener("backbutton", processBackButton, false);
-	alert("ready");
+	alert("ready end");
 }
 
 function processBackButton(e){
