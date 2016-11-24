@@ -1,6 +1,7 @@
 ﻿/**********這個檔案是 JQuery Mobile 的初始化設定 **********/
 
 $(document).bind("mobileinit", function() {
+	alert("mobileinit");
 	$.support.cors = true;
 	$.mobile.allowCrossDomainPages = true;
 	$.mobile.defaultPageTransition="slide";
