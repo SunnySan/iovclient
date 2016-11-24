@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.vibo.myvibo.app" version="1.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>MyVIBO</name>
+<widget id="com.taisys.iovdemo.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>IOVDemo</name>
     <description>
-        這是威寶用戶專屬的APP.
+        This is a demo program of IoV device.
     </description>
-    <author email="sunnysun@vibo.com.tw" href="http://www.vibo.com.tw">
-        威寶電信
+    <author email="sunny.sun@taisys.com" href="http://www.taisys.com">
+        Taisys
     </author>
     <preference name="phonegap-version" value="3.3.0" />
     <preference name="permissions" value="none" />
