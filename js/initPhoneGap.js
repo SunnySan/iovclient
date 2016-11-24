@@ -15,30 +15,25 @@ function onDeviceReady() {
 	//alert('navigator.connection.type='+navigator.connection.type);
 	//alert('navigator.network.connection.type='+navigator.network.connection.type);
 	//cordova.exec(null, null, "SplashScreen", "hide", []);	//關閉SplashScreen
-	alert("ready 1");
-	alert(navigator.connection.type);
 	if (navigator.connection.type==Connection.NONE){
-	alert("ready 2");
 		navigator.notification.alert(
-			'本程式執行時需要網路連線，請開啟網路連線後，重新執行本程式!',  // message
+			'This program needs network connection, please connect to internet then run this program again.',  // message
 			quitMe,         // callback
-			'無網路連線',            // title
-			'我知道了'                  // buttonName
+			'No network connection',            // title
+			'I got it.'                  // buttonName
 		);
 	}
-	alert("ready 3");
 	document.addEventListener("backbutton", processBackButton, false);
-	alert("ready end");
 }
 
 function processBackButton(e){
 	e.preventDefault();
 	if($.mobile.activePage.attr('id')=='home'){
 		navigator.notification.confirm(
-			'結束且離開MyVIBO服務？',  // message
+			'Exit IoV demo program?',  // message
 			quitMeConfirm,              // callback to invoke with index of button pressed
-			'離開確認',            // title
-			'結束程式,繼續使用'          // buttonLabels
+			'System confirmation',            // title
+			'Exit,Cancel'          // buttonLabels
 		);
 	}else {
 		//history.go(-1);
