@@ -179,7 +179,13 @@
 	};
 	function onMessageArrived(message) {
 		console.log("onMessageArrived:"+message.payloadString);
-		//client.disconnect(); 
+		var payload = message.payloadString;
+		var displayMessage = "";
+		if (payload.indexOf("ServerMessage")>0){
+			var obj = JSON.parse(payload);
+			displayMessage = obj.ServerMessage;
+			MsgBox(displayMessage);
+		}
 	};	
 
 	// 發佈訊息
@@ -201,6 +207,7 @@
 		obj.lon = $('#frmUserLogin #txtLongitude').val();
 		obj.fuel = $('#frmUserLogin #txtFuel').val();
 		obj.temperature = $('#frmUserLogin #txtTemperature').val();
+		obj.ServerMessage="this is server messae";
 		var payload= JSON.stringify(obj);
 	    var message = new Paho.MQTT.Message(payload);
 	    message.destinationName = TOPIC + uuid;
