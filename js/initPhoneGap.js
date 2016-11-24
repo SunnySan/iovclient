@@ -16,6 +16,7 @@ function onDeviceReady() {
 	//alert('navigator.network.connection.type='+navigator.network.connection.type);
 	//cordova.exec(null, null, "SplashScreen", "hide", []);	//關閉SplashScreen
 	alert("ready 1");
+	alert(navigator.connection.type);
 	if (navigator.connection.type==Connection.NONE){
 	alert("ready 2");
 		navigator.notification.alert(

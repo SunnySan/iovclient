@@ -26,6 +26,9 @@
     <icon gap:density="mdpi" gap:platform="android" src="res/icon/48.png" />
     <icon gap:density="hdpi" gap:platform="android" src="res/icon/72.png" />
     <icon gap:density="xhdpi" gap:platform="android" src="res/icon/96.png" />
+
+	<plugin name="cordova-plugin-network-information" spec="~1.3.0" />
+	<plugin name="cordova-plugin-dialogs" spec="~1.3.0" />
     <plugin name="cordova-plugin-geolocation" spec="~2.4.0" />
     <plugin name="cordova-plugin-device" spec="~1.1.3" />
 
