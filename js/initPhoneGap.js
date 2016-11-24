@@ -27,6 +27,7 @@ function onDeviceReady() {
 }
 
 function processBackButton(e){
+	alert("ecit");
 	e.preventDefault();
 	if($.mobile.activePage.attr('id')=='home'){
 		navigator.notification.confirm(
