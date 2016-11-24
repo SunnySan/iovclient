@@ -15,7 +15,9 @@ function onDeviceReady() {
 	//alert('navigator.connection.type='+navigator.connection.type);
 	//alert('navigator.network.connection.type='+navigator.network.connection.type);
 	//cordova.exec(null, null, "SplashScreen", "hide", []);	//關閉SplashScreen
+	alert("ready 1");
 	if (navigator.connection.type==Connection.NONE){
+	alert("ready 2");
 		navigator.notification.alert(
 			'本程式執行時需要網路連線，請開啟網路連線後，重新執行本程式!',  // message
 			quitMe,         // callback
@@ -23,6 +25,7 @@ function onDeviceReady() {
 			'我知道了'                  // buttonName
 		);
 	}
+	alert("ready 3");
 	document.addEventListener("backbutton", processBackButton, false);
 	alert("ready end");
 }
