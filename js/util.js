@@ -150,7 +150,7 @@ function showBlockUI(){
 */
 	
 	$.blockUI({ 
-		message: '<img src="images/loading.gif">資料更新中，請稍候...</img>',
+		message: '<img src="images/loading.gif">Please waiting...</img>',
 		css:{
 			border: 'none',
 			padding: '15px',
