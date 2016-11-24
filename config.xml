@@ -47,7 +47,6 @@
     <gap:splash gap:platform="ios" height="1024" src="res/screen/480x800.png" width="768" />
     <gap:splash gap:platform="ios" height="768" src="res/screen/480x800.png" width="1024" />
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
-    <gap:plugin name="org.apache.cordova.network-information" version="1.3.0" />
     <gap:plugin name="org.apache.cordova.inappbrowser" version="0.2.4" />
     <gap:plugin name="org.apache.cordova.dialogs" version="0.2.6" />
     <gap:plugin name="com.adobe.plugins.gaplugin" version="2.3.1" />
