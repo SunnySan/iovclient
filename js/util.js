@@ -101,7 +101,7 @@ function showBlockUI(){
 */
 	
 	$.blockUI({ 
-		message: '<img src="images/loading.gif">Please waiting...</img>',
+		message: '<img src="images/loading.gif">Please wait...</img>',
 		css:{
 			border: 'none',
 			padding: '15px',

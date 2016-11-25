@@ -81,8 +81,14 @@
 	function getPosition(){
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
-				$('#txtLatitude').val(position.coords.latitude);
-				$('#txtLongitude').val(position.coords.longitude);
+				if (beEmpty(position.coords.latitude) || beEmpty(position.coords.longitude)){
+					MsgBox("Unable to get your GPS location, please make sure you have turned on GPS, will set to default location!");
+					$('#frmUserLogin #txtLatitude').val('25');
+					$('#frmUserLogin #txtLongitude').val('120');
+				}else{
+					$('#txtLatitude').val(position.coords.latitude);
+					$('#txtLongitude').val(position.coords.longitude);
+				}
 			}, function() {
 				//unBlockUI();
 				MsgBox("Unable to get your GPS location, please make sure you have turned on GPS, will set to default location!");
@@ -197,9 +203,13 @@
 		}else{
 			if(navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(function(position) {
-					$('#txtLatitude').val(position.coords.latitude);
-					$('#txtLongitude').val(position.coords.longitude);
-					$('#txtLatitudeLabel').text('Latitude');
+					if (beEmpty(position.coords.latitude) || beEmpty(position.coords.longitude)){
+						$('#txtLatitudeLabel').text('Latitude: Failed to get GPS location.');
+					}else{
+						$('#txtLatitude').val(position.coords.latitude);
+						$('#txtLongitude').val(position.coords.longitude);
+						$('#txtLatitudeLabel').text('Latitude');
+					}
 				}, function() {
 					$('#txtLatitudeLabel').text('Latitude: Failed to get GPS location.');
 				},
