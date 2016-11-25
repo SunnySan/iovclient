@@ -13,7 +13,6 @@ $(document).on('click', ".external", function (e) {
 //hide the keyboard when input is actif，若不這樣做，當輸入文字時，螢幕下方的虛擬keyboard會將footer往上推，不只蓋住input box，可能會使點選input box的click事件變成click footer
 $("input").blur(function() {
 	$("[data-role=footer]").show();
-	$("[data-role=footer]").redraw();
 });
 
 $("input").focus(function() {
