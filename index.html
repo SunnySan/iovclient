@@ -45,7 +45,7 @@
 				<input type="checkbox" id="chkAutoMoving" name="chkAutoMoving">Auto moving
 			</label>
 
-			<label for="txtLatitude">Latitude</label>
+			<label for="txtLatitude" id="txtLatitudeLabel" name="txtLatitudeLabel">Latitude</label>
 			<input type="text" name="txtLatitude" id="txtLatitude" maxlength="50" value="">
 			<label for="txtLongitude">Longitude</label>
 			<input type="text" name="txtLongitude" id="txtLongitude" maxlength="50" value="">
@@ -194,6 +194,21 @@
 			var lon = parseFloat($('#frmUserLogin #txtLongitude').val());
 			lon += 0.002;
 			$('#frmUserLogin #txtLongitude').val(lon);
+		}else{
+			if(navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(function(position) {
+					$('#txtLatitude').val(position.coords.latitude);
+					$('#txtLongitude').val(position.coords.longitude);
+					$('#txtLatitudeLabel').text('Latitude');
+				}, function() {
+					$('#txtLatitudeLabel').text('Latitude: Failed to get GPS location.');
+				},
+				{ maximumAge: 60000, timeout: 30000, enableHighAccuracy: true }
+				);	//navigator.geolocation.getCurrentPosition(function(position) {
+			} else {
+				$('#txtLatitudeLabel').text('Latitude: Failed to get GPS location.');
+			}	//if(navigator.geolocation) {
+
 		}
 
 		var fuel = parseFloat($('#frmUserLogin #txtFuel').val());
