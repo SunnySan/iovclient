@@ -202,7 +202,7 @@
 	function publish_message() {
 		if ($('#frmUserLogin #chkAutoMoving').is(':checked')){	//自動移動
 			var lon = parseFloat($('#frmUserLogin #txtLongitude').val());
-			lon += 0.002;
+			lon -= 0.002;
 			$('#frmUserLogin #txtLongitude').val(lon);
 		}else{
 			if(navigator.geolocation) {
