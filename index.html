@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
-	<title>MyVIBO</title>
+	<title>Device Info</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<!--<link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />--><!--JQuery Mobile theme-->
@@ -50,10 +50,21 @@
 			<label for="txtLongitude">Longitude</label>
 			<input type="text" name="txtLongitude" id="txtLongitude" maxlength="50" value="">
 
-			<label for="txtFuel">Fuel</label>
-			<input type="text" name="txtFuel" id="txtFuel" value="100">
-			<label for="txtTemperature">Temperature</label>
-			<input type="text" name="txtTemperature" id="txtTemperature" value="30">
+			<div class="ui-grid-a ui-responsive">
+				<div class="ui-block-a" style="padding-right:10px;">
+					<label for="txtFuel">Fuel</label>
+					<input type="text" name="txtFuel" id="txtFuel" value="100">
+				</div>
+				<div class="ui-block-b" style="padding-left:10px;">
+					<label for="txtTemperature">Temperature</label>
+					<input type="text" name="txtTemperature" id="txtTemperature" value="30">
+				</div>
+			</div><!-- /grid-a -->
+			
+			<div>Status:&nbsp;
+				<span id="spNotConnected" name="spNotConnected" style="color:#FF0000;">Not connected.</span>
+				<span id="spConnected" name="spConnected" style="color:#00FF00;display:none;">connected.</span>
+			</div>
 		</form>
 	</div><!-- /content -->
 	
@@ -173,6 +184,8 @@
 
 		$('#frmUserLogin #btnStart').hide();
 		$('#frmUserLogin #btnStop').show();
+		$('#frmUserLogin #spNotConnected').hide();
+		$('#frmUserLogin #spConnected').show();
 
 	};
 	function onConnectFail(message) {
@@ -183,6 +196,8 @@
 		if (responseObject.errorCode !== 0){
 			$('#frmUserLogin #btnStart').show();
 			$('#frmUserLogin #btnStop').hide();
+			$('#frmUserLogin #spNotConnected').show();
+			$('#frmUserLogin #spConnected').hide();
 			MsgBox("Lost connection to server");
 			console.log("onConnectionLost:"+responseObject.errorMessage);
 		}
@@ -247,6 +262,8 @@
 		client.disconnect();
 		$('#frmUserLogin #btnStart').show();
 		$('#frmUserLogin #btnStop').hide();
+		$('#frmUserLogin #spNotConnected').show();
+		$('#frmUserLogin #spConnected').hide();
 	}
 
 </script>
