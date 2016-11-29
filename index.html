@@ -84,16 +84,24 @@
 	$('#home').on('pageshow',function(event){
 		$("#home div[data-role='footer']").show();
 		getPosition();
-		requestReadPermission();
-		hasReadPermission();
-		getSIMInfo();
+		//requestReadPermission();
+		//hasReadPermission();
+		//getMySIMInfo();
+		window.plugins.imeiplugin.getImei(callback);
 	});
 
+function callback(imei) {
+		MsgBox("11");
+    //console.log("My Android IMEI :" + imei);
+		MsgBox(imei);
+		MsgBox("12");
+}
 </script>
 
 <script type="text/javascript">
 	/**************** 取得SIM卡資訊 **************/
-	function getSIMInfo(){
+	/*
+	function getMySIMInfo(){
 		MsgBox("5");
 		window.plugins.sim.getSimInfo(successCallbackSIMInfo, errorCallbackSIMInfo);
 		MsgBox("6");
@@ -124,6 +132,7 @@
 		window.plugins.sim.requestReadPermission(successCallbackSIMInfo, errorCallbackSIMInfo);
 		MsgBox("2");
 	}
+	*/
 	/**************** 取得SIM卡資訊 **************/
 
 	function getPosition(){
