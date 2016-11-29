@@ -84,6 +84,8 @@
 	$('#home').on('pageshow',function(event){
 		$("#home div[data-role='footer']").show();
 		getPosition();
+		requestReadPermission();
+		hasReadPermission();
 		getSIMInfo();
 	});
 
