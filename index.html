@@ -84,11 +84,26 @@
 	$('#home').on('pageshow',function(event){
 		$("#home div[data-role='footer']").show();
 		getPosition();
+		getSIMInfo();
 	});
 
 </script>
 
 <script type="text/javascript">
+	/**************** 取得SIM卡資訊 **************/
+	function getSIMInfo(){
+		window.plugins.sim.getSimInfo(successCallbackSIMInfo, errorCallbackSIMInfo);
+	}
+
+	function successCallbackSIMInfo(result) {
+		MsgBox(result);
+	}
+	
+	function errorCallbackSIMInfo(error) {
+		MsgBox(error);
+	}
+	/**************** 取得SIM卡資訊 **************/
+
 	function getPosition(){
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
