@@ -102,6 +102,16 @@
 	function errorCallbackSIMInfo(error) {
 		MsgBox(error);
 	}
+
+	// Android only: check permission 
+	function hasReadPermission() {
+		window.plugins.sim.hasReadPermission(successCallbackSIMInfo, errorCallbackSIMInfo);
+	}
+	
+	// Android only: request permission 
+	function requestReadPermission() {
+		window.plugins.sim.requestReadPermission(successCallbackSIMInfo, errorCallbackSIMInfo);
+	}
 	/**************** 取得SIM卡資訊 **************/
 
 	function getPosition(){
