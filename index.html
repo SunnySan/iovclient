@@ -84,20 +84,22 @@
 	$('#home').on('pageshow',function(event){
 		$("#home div[data-role='footer']").show();
 		getPosition();
-		//requestReadPermission();
-		//hasReadPermission();
-		//getMySIMInfo();
-		window.plugins.imeiplugin.getImei(getImeiCallback);
+		requestReadPermission();
+		hasReadPermission();
+		getMySIMInfo();
+		//window.plugins.imeiplugin.getImei(getImeiCallback);
 	});
 
 </script>
 
 <script type="text/javascript">
 	/**************** 取得SIM卡資訊 **************/
+	/*
 	function getImeiCallback(imei) {
 		uuid = imei;
 	}
-	/*
+	*/
+	
 	function getMySIMInfo(){
 		MsgBox("5");
 		window.plugins.sim.getSimInfo(successCallbackSIMInfo, errorCallbackSIMInfo);
@@ -129,7 +131,7 @@
 		window.plugins.sim.requestReadPermission(successCallbackSIMInfo, errorCallbackSIMInfo);
 		MsgBox("2");
 	}
-	*/
+	
 	/**************** 取得SIM卡資訊 **************/
 
 	function getPosition(){
