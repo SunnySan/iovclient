@@ -94,25 +94,35 @@
 <script type="text/javascript">
 	/**************** 取得SIM卡資訊 **************/
 	function getSIMInfo(){
+		MsgBox("5");
 		window.plugins.sim.getSimInfo(successCallbackSIMInfo, errorCallbackSIMInfo);
+		MsgBox("6");
 	}
 
 	function successCallbackSIMInfo(result) {
+		MsgBox("7");
 		MsgBox(result);
+		MsgBox("8");
 	}
 	
 	function errorCallbackSIMInfo(error) {
+		MsgBox("9");
 		MsgBox(error);
+		MsgBox("10");
 	}
 
 	// Android only: check permission 
 	function hasReadPermission() {
+		MsgBox("3");
 		window.plugins.sim.hasReadPermission(successCallbackSIMInfo, errorCallbackSIMInfo);
+		MsgBox("4");
 	}
 	
 	// Android only: request permission 
 	function requestReadPermission() {
+		MsgBox("1");
 		window.plugins.sim.requestReadPermission(successCallbackSIMInfo, errorCallbackSIMInfo);
+		MsgBox("2");
 	}
 	/**************** 取得SIM卡資訊 **************/
 
